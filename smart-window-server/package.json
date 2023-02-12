@@ -1,0 +1,28 @@
+{
+  "name": "smart-window",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dist": "awot-static"
+  },
+  "dependencies": {
+    "preact": "^10.11.3"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.5.0",
+    "awot-scripts": "^3.1.2",
+    "vite": "^4.1.0"
+  },
+  "awot-static": {
+    "sources": "./dist",
+    "indexFile": "index.html",
+    "sketchDir": "./smart-window-esp",
+    "exclude": [
+      "*.map"
+    ]
+  }
+}
