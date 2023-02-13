@@ -3,11 +3,17 @@
 #include "StaticFiles.h"
 #define LED_BUILTIN 2
 
-#define WIFI_SSID "network"
-#define WIFI_PASSWORD "password"
+#define WIFI_SSID "PT-WIFI"
+#define WIFI_PASSWORD "rodrigues"
 
 WiFiServer server(80);
 Application app;
+
+void abrir(Request &req, Response &res) {
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(100);
+  digitalWrite(LED_BUILTIN, HIGH);
+}
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -21,17 +27,11 @@ void setup() {
 
   Serial.println(WiFi.localIP());
 
+  app.get("/abrir", &abrir);
+
   app.use(staticFiles());
 
   server.begin();
-
-  // setup confirmation signal
-  for (int i = 0; i < 3; i++) {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(500);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(500);
-  }
 
 }
 

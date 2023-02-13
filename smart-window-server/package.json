@@ -10,11 +10,15 @@
     "dist": "awot-static"
   },
   "dependencies": {
+    "daisyui": "^2.50.0",
     "preact": "^10.11.3"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
+    "autoprefixer": "^10.4.13",
     "awot-scripts": "^3.1.2",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.6",
     "vite": "^4.1.0"
   },
   "awot-static": {
